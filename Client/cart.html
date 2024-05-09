@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Navigation of the page -->
+      <nav class="nav-top">
+        <a href="index.html"
+          ><img src="./public/logo_tecnoati.png" alt="Company Logo"
+        /></a>
+
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="products.html"><li>Products</li></a>
+          <a href="contact-us.html"><li>Contact Us</li></a>
+          <a href="cart.html"
+            ><li><i class="fa-solid fa-cart-shopping"></i></li
+          ></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="cart-container">
+        <a href="products.html"><span>< Back</span></a>
+        <h3>Shopping Cart</h3>
+        <div class="cart-content-wrapper">
+          <div class="cart-content">
+            <!-- Dynamically content loading -->
+          </div>
+          <div class="cart-total">
+            <h1>Total: <span id="lbl-total">$231</span></h1>
+            <button id="btn-checkout">CHECKOUT</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./scripts/cart.js"></script>
+  </body>
+</html>

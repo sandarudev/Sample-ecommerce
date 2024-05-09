@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  width: 15rem;
+}
+
+header {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Login Status Style */
+#login-status {
+  display: none;
+  position: fixed;
+  right: 70px;
+  top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(12, 122, 12);
+}
+
+#btn-signout {
+  font-size: 1rem;
+  padding: 10px 10px;
+  margin-top: 10px;
+  background-color: #d84747;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btn-signout:hover {
+  background-color: #ce2a2a;
+  box-shadow: 1px 1px 4px rgb(81, 80, 80);
+}
+
+
+
+.nav-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+ul {
+  display: flex;
+}
+
+ul > a {
+  list-style: none;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: 0.2s ease-in;
+}
+
+ul > a:hover {
+  color: #fff;
+  background-color: #00267f;
+  border-radius: 4px;
+}
+
+/* User popup styles */
+.user-popup {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #afb2b9b9;
+}
+
+.popup-content {
+  display: flex;
+  max-width: 80vw;
+  min-height: 70vh;
+  margin: auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 30px #0000004b;
+  position: relative;
+}
+
+.popup-content i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup-content i:hover {
+  color: #d84747;
+}
+
+.popup-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 25vw;
+  position: relative;
+}
+
+.popup-desc h2 {
+  position: absolute;
+  top: 70px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20vw;
+  text-align: left;
+}
+
+.login-form label {
+  justify-content: left;
+  font-size: 1rem;
+  color: #000000df;
+}
+
+.login-form input {
+  border: 1px solid gray;
+  font-size: 1rem;
+  padding: 5px 30px;
+  margin-bottom: 20px;
+}
+
+.login-form button {
+  font-size: 1rem;
+  padding: 7px 50px;
+  max-width: 150px;
+  margin: auto;
+  border: none;
+  background-color: #0073b6;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.login-form button:hover {
+  background-color: #05659c;
+  box-shadow: 3px 2px 4px #00000043;
+}
+
+.popup-desc p {
+  font-size: 0.9rem;
+}
+
+#lbl-register {
+  display: block;
+  color: #00267f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Registration Form Styles */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20vw;
+  height: fit-content;
+  text-align: left;
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+.registration-form label {
+  justify-content: left;
+  font-size: 0.8rem;
+  color: #000000df;
+}
+
+.registration-form input {
+  border: 1px solid gray;
+  font-size: 0.8rem;
+  padding: 5px 30px;
+  margin-bottom: 5px;
+}
+
+.registration-form button {
+  font-size: 1rem;
+  padding: 7px 50px;
+  max-width: 150px;
+  margin: auto;
+  border: none;
+  background-color: #0073b6;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.registration-form button:hover {
+  background-color: #05659c;
+  box-shadow: 3px 2px 4px #00000043;
+}
+
+.popup-desc p {
+  font-size: 0.9rem;
+}
+
+#lbl-login {
+  display: block;
+  color: #00267f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.popup-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25vw;
+  background-color: #00267f;
+}
+
+#myCarousel {
+  width: 100%;
+}
+
+.banner-container h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+/* Product Styles */
+.product-container {
+  max-width: 80vw;
+  margin: auto;
+  display: flex;
+  column-gap: 40px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  max-width: 18vw;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px;
+}
+
+.product-item img {
+  width: 100%;
+  height: 35vh;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.product-item h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin: 0;
+}
+
+.product-item h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-row button {
+  width: 10vw;
+  border: none;
+  background-color: rgb(253, 242, 93);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-row button:hover {
+  background-color: rgb(206, 197, 73);
+}
+
+/* Q-Popup Styles */
+.q-popup-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #afb2b9b9;
+}
+
+.q-popup-content {
+  min-width: 30vw;
+  min-height: 20vh;
+  margin: auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 30px #0000004b;
+  position: relative;
+}
+
+.q-popup-content #close-icon {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #000;
+}
+
+.q-popup-content #close-icon:hover {
+  color: #d84747;
+}
+
+.q-content {
+  min-width: 10vw ;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.q-content input {
+  font-size: 1rem;
+  margin-top: 10px;
+  padding: 3px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.q-content button {
+  font-size: 1rem;
+  padding: 6px 20px;
+  margin-top: 15px;
+  background-color: #0073b6;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.q-content button:hover {
+  background-color: #025d91;
+  box-shadow: 1px 1px 10px #5857574b;
+}
+
+
+/* Cart Styles */
+.cart-container {
+  max-width: 70vw;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.cart-container a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.cart-container a:hover {
+  background-color: #00267f;
+  color: #fff;
+}
+
+.cart-container h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.cart-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 50vw;
+  border-top: 1px solid #00000036;
+  padding-top: 10px;
+}
+
+.cart-item img {
+  width: 80px;
+}
+
+.cart-item h2 {
+  font-size: 1.3rem;
+}
+
+.cart-item button {
+  font-size: 1rem;
+  padding: 5px 20px;
+  border: none;
+  background-color: red;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: rgb(186, 6, 6);
+}
+
+.cart-total {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto auto auto;
+}
+
+.cart-total button {
+  font-size: 1.2rem;
+  background-color: #00267f;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.cart-total button:hover {
+  background-color: #062f8f;
+}
