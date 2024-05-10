@@ -421,6 +421,7 @@ ul > a:hover {
   width: 100%;
   height: 100%;
   background-color: #afb2b9b9;
+  z-index: 1000;
 }
 
 .q-popup-content {
@@ -535,6 +536,12 @@ ul > a:hover {
   font-size: 1.3rem;
 }
 
+#item-quantity {
+  text-align: center;
+  width: fit-content;
+  
+}
+
 .cart-item button {
   font-size: 1rem;
   padding: 5px 20px;
@@ -543,10 +550,12 @@ ul > a:hover {
   color: #fff;
   border-radius: 3px;
   cursor: pointer;
+  transition: 0.2s ease-in;
 }
 
 .cart-item button:hover {
-  background-color: rgb(186, 6, 6);
+  background-color: rgb(225, 25, 25);
+  box-shadow: 1px 1px 5px red;
 }
 
 .cart-total {
@@ -566,8 +575,11 @@ ul > a:hover {
   border-radius: 3px;
   margin-top: 20px;
   cursor: pointer;
+  transition: 0.2s ease-in;
+
 }
 
 .cart-total button:hover {
   background-color: #062f8f;
+  box-shadow: 1px 1px 5px #03517e;
 }

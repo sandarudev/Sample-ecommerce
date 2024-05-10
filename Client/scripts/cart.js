@@ -53,7 +53,7 @@ function renderCartItem(items, quantity) {
     const parsedPrice = JSON.parse(price);
 
     cartTotal = cartTotal + parsedPrice;
-    lblTotalEl.textContent = parseFloat(cartTotal).toFixed(2);
+    lblTotalEl.textContent = `$${parseFloat(cartTotal).toFixed(2)}`;
 
     const itemEl = document.createElement("div");
     itemEl.classList.add("cart-item");
@@ -107,7 +107,7 @@ function renderCartItem(items, quantity) {
       if (resp.ok) {
         //Update the total price
         cartTotal = cartTotal - parsedPrice;
-        lblTotalEl.textContent = parseFloat(cartTotal).toFixed(2);
+        lblTotalEl.textContent = `$${parseFloat(cartTotal).toFixed(2)}`;
 
         console.log("cart item deleted successfully!");
         return "ok";
