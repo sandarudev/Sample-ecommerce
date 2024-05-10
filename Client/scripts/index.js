@@ -315,7 +315,7 @@ function renderProducts(products) {
     <img src="${image_url}" alt="${name}">
           <h2>${name}</h2>
           <h3>${manufacturer}</h3>
-          <span>${quantity} available</span>
+          <span class="lbl-stock">${quantity} In Stock</span>
           <div class="card-row">
             <h2>${price}</h2>
             <button id="btn-addCart">Add to Cart</button>

@@ -6,15 +6,23 @@
 body {
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FAFAFA;
+  height: 200vh;
 }
 
 img {
-  width: 15rem;
+  width: 10rem;
 }
 
 header {
-  margin-top: 40px;
-  margin-bottom: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  padding-top: 30px;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 2px 2px 10px #595858 ;
 }
 
 /* Login Status Style */
@@ -22,15 +30,15 @@ header {
   display: none;
   position: fixed;
   right: 70px;
-  top: 20px;
+  top: 10px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: rgb(12, 122, 12);
 }
 
 #btn-signout {
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 10px 10px;
   margin-top: 10px;
   background-color: #d84747;
@@ -51,7 +59,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 ul {
@@ -73,6 +81,46 @@ ul > a:hover {
   border-radius: 4px;
 }
 
+/* Seperator Styles */
+.seperate-container {
+  width: 100%;
+  background-color: #000A4A;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.seperate-container i {
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.seperate-container h1 {
+  font-weight: 500;
+  margin-left: 80px;
+}
+
+/* Aside containe styles */
+.aside-container {
+  position: fixed;
+  height: 100vh;
+  background-color: #000731;
+  top: 8vw;
+  width: 15%;
+  box-shadow: 2px 2px 7px #595858 ;
+
+}
+
+/* Main container styles */
+.main-container {
+  position: relative;
+  top: 150px;
+}
+
+
+
 /* User popup styles */
 .user-popup {
   display: none;
@@ -84,6 +132,7 @@ ul > a:hover {
   width: 100%;
   height: 100%;
   background-color: #afb2b9b9;
+  z-index: 1000;
 }
 
 .popup-content {
@@ -96,6 +145,7 @@ ul > a:hover {
   border-radius: 5px;
   box-shadow: 1px 1px 30px #0000004b;
   position: relative;
+
 }
 
 .popup-content i {
@@ -248,6 +298,27 @@ ul > a:hover {
 }
 
 /* Product Styles */
+
+.product-wrapper {
+  width: 84%;
+  position: relative;
+  left: 15%;
+  
+}
+
+.category-title {
+  margin-left: -10px;
+  margin-bottom: 20px;
+  background-color: #000731;
+  width: fit-content;
+  color: #fff;
+  padding: 2px 50px;
+
+  border-radius: 3px;
+
+}
+
+
 .product-container {
   max-width: 80vw;
   margin: auto;
@@ -255,51 +326,88 @@ ul > a:hover {
   column-gap: 40px;
   row-gap: 20px;
   flex-wrap: wrap;
+  left: 20px;
+  margin-top: 40px;
 }
 
 .product-item {
-  max-width: 18vw;
-  background-color: #e1e1e1;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 2px 8px 15px #48474797;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.product-item:hover {
+  box-shadow: 2px 8px 15px #484747ce;
 }
 
 .product-item img {
-  width: 100%;
-  height: 35vh;
+  width: 205px;
+  height: 150px;
+  object-fit: contain;
   margin: 0;
-  margin-bottom: 10px;
 }
 
 .product-item h2 {
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   margin-top: 10px;
   margin: 0;
 }
 
 .product-item h3 {
-  font-size: 1.5rem;
+  font-size: 0.7rem;
   margin: 0;
+  font-weight: 600;
+}
+
+.lbl-stock {
+  background-color: #03ac36;
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 0.8rem;
+  position: relative;
+  top: -8vh;
+  border-radius: 4px;
+  
 }
 
 .card-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  flex-direction: column;
+  position: relative;
+  top: -1vw;
+  align-items: center;
+}
+
+.card-row h2 {
+  font-size: 1.2rem;
+  color: #000731;
 }
 
 .card-row button {
-  width: 10vw;
+  max-width: 100px;
   border: none;
-  background-color: rgb(253, 242, 93);
-  font-size: 1.5rem;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border: 2px solid #000731;
+  border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 5px;
+  transition: 0.2s ease;
 }
 
 .card-row button:hover {
-  background-color: rgb(206, 197, 73);
+  background-color: #0073b6;
+  color: #fff;
+  border: none;
+  box-shadow: 1px 1px 10px #72c2f0;
 }
 
 /* Q-Popup Styles */
@@ -375,7 +483,7 @@ ul > a:hover {
 .cart-container {
   max-width: 70vw;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 .cart-container a {
@@ -394,7 +502,7 @@ ul > a:hover {
 
 .cart-container h3 {
   font-size: 1.6rem;
-  text-transform: uppercase;
+  
   margin-top: 30px;
 }
 

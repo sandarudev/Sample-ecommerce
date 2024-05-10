@@ -15,6 +15,13 @@
   </head>
   <body>
     <header>
+      <!-- Login Status -->
+      <div id="login-status">
+        <p>You Logged In</p>
+        <button id="btn-signout">Sign Out</button>
+      </div>
+
+
       <!-- Navigation of the page -->
       <nav class="nav-top">
         <a href="index.html"
@@ -28,10 +35,31 @@
           <a href="cart.html"
             ><li><i class="fa-solid fa-cart-shopping"></i></li
           ></a>
+          <a id="user-btn" href="#"
+          ><li><i class="fa-solid fa-user"></i></i></li
+        ></a>
         </ul>
       </nav>
+      <div class="seperate-container">
+        <h1><i class="fa-solid fa-cart-shopping"></i>Cart</h1>
+      </div>
     </header>
     <main>
+      <!-- This is the user-popup -->
+      <div class="user-popup">
+        <div class="popup-content">
+          <a id="close-icon" href="#"><i class="fa-solid fa-xmark"></i></a>
+          <div class="popup-desc">
+            
+
+          </div>
+          <div class="popup-img">
+            <img src="./public/tecnoati_white.png" alt="Company Logo">
+          </div>
+        </div>
+      </div>
+
+
       <div class="cart-container">
         <a href="products.html"><span>< Back</span></a>
         <h3>Shopping Cart</h3>
@@ -47,6 +75,7 @@
       </div>
     </main>
 
-    <script src="./scripts/cart.js"></script>
+    <script src="./scripts/cart.js"  ></script>
+    <script src="./scripts/index.js" ></script>
   </body>
 </html>

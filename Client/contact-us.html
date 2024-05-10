@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
+      <!-- Login Status -->
+      <div id="login-status">
+        <p>You Logged In</p>
+        <button id="btn-signout">Sign Out</button>
+      </div>
+
       <!-- Navigation of the page -->
       <nav class="nav-top">
         <a href="index.html"
@@ -19,11 +31,36 @@
           <a href="index.html"><li>Home</li></a>
           <a href="products.html"><li>Products</li></a>
           <a href="contact-us.html"><li>Contact Us</li></a>
-          <a href="cart.html"><li><i class="fa-solid fa-cart-shopping"></i></li></a>
+          <a href="cart.html"
+            ><li><i class="fa-solid fa-cart-shopping"></i></li
+          ></a>
+          <a id="user-btn" href="#"
+          ><li><i class="fa-solid fa-user"></i></i></li
+        ></a>
         </ul>
       </nav>
+      <div class="seperate-container">
+        <h1><i class="fa-solid fa-phone"></i>Contact Us</h1>
+      </div>
     </header>
-    <main><h1>Contact Us Page</h1></main>
+    <main>
+      <!-- This is the user-popup -->
+      <div class="user-popup">
+        <div class="popup-content">
+          <a id="close-icon" href="#"><i class="fa-solid fa-xmark"></i></a>
+          <div class="popup-desc">
+            
+
+          </div>
+          <div class="popup-img">
+            <img src="./public/tecnoati_white.png" alt="Company Logo">
+          </div>
+        </div>
+      </div>
+      
+      <h1>Contact Us Page</h1></main>
+
+    <script src="./scripts/index.js"></script>
 
   </body>
 </html>

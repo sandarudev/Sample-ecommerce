@@ -1,15 +1,24 @@
+
+
 const APIURL = "http://127.0.0.1:8080/carts";
 const cartContentEL = document.querySelector(".cart-content");
 const lblTotalEl = document.getElementById("lbl-total");
 const btnRemoveEL = document.getElementById("btn-remove");
 const btnCheckoutEL = document.getElementById("btn-checkout");
+
 let cartTotal = 0;
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   lblTotalEl.textContent = parseFloat(cartTotal).toFixed(2);
 
   // fetch all the cart items
   getCartItems(APIURL);
+  
+  
 });
+
 
 async function getCartItems(url) {
   const resp = await fetch(url);
