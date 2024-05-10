@@ -9,29 +9,25 @@ const closeBtnEl = document.getElementById("close-icon");
 const registerEl = document.getElementById("lbl-register");
 const popupContentEl = document.querySelector(".popup-content");
 const popupDescEl = document.querySelector(".popup-desc");
-const statusEl = document.getElementById('login-status');
+const statusEl = document.getElementById("login-status");
 const qPopupContainerEl = document.querySelector(".q-popup-container");
 const qPopupCloseEl = document.querySelector(".q-close");
 const qInputEl = document.getElementById("quantity-input");
 const btnAddToCart = document.getElementById("btn-addToCart");
 
-
-
-document.addEventListener('DOMContentLoaded', checkLogInStatus);
-
+document.addEventListener("DOMContentLoaded", checkLogInStatus);
 
 // Check login status
 function checkLogInStatus() {
-  const token = localStorage.getItem('token');
-  const customerId = localStorage.getItem('customerId');
+  const token = localStorage.getItem("token");
+  const customerId = localStorage.getItem("customerId");
 
-  if(token && customerId) {
+  if (token && customerId) {
     showLoginStatus();
   } else {
     hideLoginStatus();
   }
 }
-
 
 // Function to render login section to the popup panel
 function renderLogin() {
@@ -155,28 +151,29 @@ async function loginUser() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
 
     if (resp.ok) {
       const data = await resp.json();
       localStorage.setItem("token", data.token);
-      
+
       // Fetch cutomer data after successful login
       console.log(email);
-      const customerResponse = await fetch(`http://127.0.0.1:8080/users/${email}`);
-      if(customerResponse.ok) {
-        const customerData =  await customerResponse.json();
+      const customerResponse = await fetch(
+        `http://127.0.0.1:8080/users/${email}`
+      );
+      if (customerResponse.ok) {
+        const customerData = await customerResponse.json();
         const flatData = customerData[0];
-        localStorage.setItem('customerId', flatData.customer_id);
+        localStorage.setItem("customerId", flatData.customer_id);
       }
-      
+
       console.log("Login successful");
       alert("Login Successful");
-      
+
       popupEl.style.display = "none";
       showLoginStatus();
-
     }
   } catch (error) {
     console.error("Error logging in:", error);
@@ -188,19 +185,16 @@ function showLoginStatus() {
   statusEl.style.display = "block";
 }
 
-
 // Function to hide login status
 function hideLoginStatus() {
   statusEl.style.display = "none";
 }
 
 // Handle signout event
-document.getElementById('btn-signout').addEventListener('click', () => {
+document.getElementById("btn-signout").addEventListener("click", () => {
   logOut();
   hideLoginStatus();
-}) 
-
-
+});
 
 // Handle the user registration
 async function registerUser() {
@@ -242,11 +236,10 @@ async function registerUser() {
 
 // Function to Logout
 function logOut() {
-  localStorage.removeItem('token');
-  localStorage.removeItem('customerId')
-  console.log('Logged out!');
+  localStorage.removeItem("token");
+  localStorage.removeItem("customerId");
+  console.log("Logged out!");
 }
-
 
 async function getProducts(url) {
   const resp = await fetch(url);
@@ -256,49 +249,42 @@ async function getProducts(url) {
   renderProducts(respData);
 }
 
-
 // Function to render Quantity Popup
 function renderQPopup() {
-  qPopupContainerEl.style.display = 'flex'; 
+  qPopupContainerEl.style.display = "flex";
 }
 
-// Handle Q Popup Close Event 
-qPopupCloseEl.addEventListener('click', () => {
-  qPopupContainerEl.style.display = 'none'; 
-})
+// Handle Q Popup Close Event
+qPopupCloseEl.addEventListener("click", () => {
+  qPopupContainerEl.style.display = "none";
+});
 
-// Add product to cart 
+// Add product to cart
 async function addProductToCart(product) {
   try {
     console.log(product);
     const productId = product.product_id;
     const quantityValue = parseInt(qInputEl.value);
     const resp = await fetch(`http://127.0.0.1:8080/carts/${productId}`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({quantityValue})
+      body: JSON.stringify({ quantityValue }),
     });
-    
-    if(resp.ok) {
+
+    if (resp.ok) {
       const data = await resp.json();
-      console.log('Item added to cart: ', data);
-      qPopupContainerEl.style.display = 'none'; 
+      console.log("Item added to cart: ", data);
+      qPopupContainerEl.style.display = "none";
     } else {
-      throw new Error('Failed to add item to cart');
+      throw new Error("Failed to add item to cart");
     }
-    
   } catch (error) {
-    console.error('Error adding item to cart: ', error);
+    console.error("Error adding item to cart: ", error);
   }
 }
-
-
-
-
-
 
 // Rendering Products to the product container
 function renderProducts(products) {
@@ -317,7 +303,7 @@ function renderProducts(products) {
           <h3>${manufacturer}</h3>
           <span class="lbl-stock">${quantity} In Stock</span>
           <div class="card-row">
-            <h2>${price}</h2>
+            <h2>$${price}</h2>
             <button id="btn-addCart">Add to Cart</button>
           </div>
     `;
@@ -328,17 +314,15 @@ function renderProducts(products) {
       if (loggedIn) {
         // Render quantity popup
         renderQPopup();
-        btnAddToCart.addEventListener('click', () => {
+        btnAddToCart.addEventListener("click", () => {
           addToCart(product);
-          qPopupContainerEl.style.display = 'none'; 
+          qPopupContainerEl.style.display = "none";
         });
       } else {
         // Display login panel
         renderLogin();
         popupEl.style.display = "flex";
       }
-
-      
     });
 
     productContainerEL.appendChild(productEl);
@@ -352,10 +336,10 @@ function renderProducts(products) {
 
   async function addToCart(product) {
     try {
-      const customerId = localStorage.getItem('customerId');
+      const customerId = localStorage.getItem("customerId");
       const productID = product.product_id;
       const quantity = parseInt(qInputEl.value);
-      console.log("Quantity entered: ",quantity);
+      console.log("Quantity entered: ", quantity);
 
       const resp = await fetch("http://127.0.0.1:8080/carts", {
         method: "POST",
@@ -371,7 +355,6 @@ function renderProducts(products) {
 
       if (resp.ok) {
         console.log("Product added to cart successfully!");
-
       } else {
         throw new Error("Failed to add product to cart");
       }

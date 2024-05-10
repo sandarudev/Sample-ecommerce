@@ -1,0 +1,7 @@
+INSERT INTO Products (name, description, price, quantity, manufacturer, category, image_url) VALUES
+('Gas Valve Replacement Kit', 'Replacement kit for gas valves, suitable for various gas appliances.', 49.99, 100, 'TechGas', 'Gas Spare Parts', 'https://m.media-amazon.com/images/I/41gI1R2MI8L.jpg'),
+('Boiler Ignition Control Module', 'High-quality ignition control module for boilers, ensures efficient ignition process.', 79.99, 75, 'HeatTech', 'Boiler Spare Parts', 'https://m.media-amazon.com/images/I/51u6H1aW9mL._AC_UF894,1000_QL80_.jpg'),
+('Air Conditioner Capacitor', 'Capacitor for air conditioners, helps in starting and running the compressor smoothly.', 29.99, 50, 'CoolTech', 'Air Conditioner Spare Parts', 'https://m.media-amazon.com/images/I/51czBIBKg1L.jpg'),
+('Gas Burner Nozzle Set', 'Set of replacement nozzles for gas burners, compatible with various models.', 34.99, 80, 'TechGas', 'Gas Spare Parts', 'https://m.media-amazon.com/images/I/81iHmyGPbDL.jpg'),
+('Boiler Pump Motor', 'High-performance pump motor for boilers, ensures efficient water circulation.', 129.99, 40, 'HeatTech', 'Boiler Spare Parts', 'https://www.royal.ps/storage/products/September2021/M8XJSVIGOCN2MxoXDQst.jpg'),
+('Boiler Thermostat', 'Thermostat for boilers, helps in maintaining the desired temperature.', 49.99, 70, 'HeatTech', 'Boiler Spare Parts', 'https://www.esse.com/wp-content/uploads/2017/01/CENT-081_BOILER_LIMIT_STAT__01730.jpg');

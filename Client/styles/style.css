@@ -324,10 +324,11 @@ ul > a:hover {
   margin: auto;
   display: flex;
   column-gap: 40px;
-  row-gap: 20px;
+  row-gap: 80px;
   flex-wrap: wrap;
   left: 20px;
   margin-top: 40px;
+  justify-content: center;
 }
 
 .product-item {
@@ -339,6 +340,7 @@ ul > a:hover {
   border-radius: 3px;
   cursor: pointer;
   transition: 0.3s ease-in;
+  padding: 10px;
 }
 
 .product-item:hover {
@@ -526,6 +528,8 @@ ul > a:hover {
   min-width: 50vw;
   border-top: 1px solid #00000036;
   padding-top: 10px;
+  
+  
 }
 
 .cart-item img {
