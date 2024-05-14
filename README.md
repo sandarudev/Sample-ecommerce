@@ -1,4 +1,4 @@
-# Sample-ecommerce
+# Sample-ECommerce Application (Node.js, Express.js and MySQL)
 ## Steps to Test the Application:
 1. Download OR Clone the project from my GitHub repository.
 2. Extract the files and navigate to the Server directory via your IDE's terminal. Install necessary npm dependencies by running (npm install) in Server directory.
